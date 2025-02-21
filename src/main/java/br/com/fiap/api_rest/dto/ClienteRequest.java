@@ -1,6 +1,8 @@
 package br.com.fiap.api_rest.dto;
 
 import br.com.fiap.api_rest.enums.Categoria;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @Data
 @AllArgsConstructor

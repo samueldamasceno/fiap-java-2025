@@ -32,6 +32,9 @@ public class Cliente {
         this.categoria = categoria;
     }
 
+    public Cliente(Object o, String nome, int idade) {
+    }
+
     public Long getId() {
         return id;
     }
