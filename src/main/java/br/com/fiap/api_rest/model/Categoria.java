@@ -1,11 +1,13 @@
-package br.com.fiap.api_rest.enums;
+package br.com.fiap.api_rest.model;
 
 public enum Categoria {
-    BRONZE("Básico"),PRATA("Prata"), OURO("Ouro");
+    BRONZE("Bronze"),
+    PRATA("Prata"),
+    OURO("Ouro");
 
     private String descricao;
 
-    Categoria(String descricao){
+    Categoria(String descricao) {
         this.descricao = descricao;
     }
 
