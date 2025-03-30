@@ -23,6 +23,8 @@ public class ClienteService {
     public ClienteService(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
     }
+//    @Autowired
+//    ClienteRepository clienteRepository;
 
     public Cliente requestToCliente(ClienteRequest clienteRequest) {
         return new Cliente(null,
@@ -58,10 +60,14 @@ public class ClienteService {
             clientesResponse.add(clienteToResponse(cliente, true));
         }
         return clientesResponse;
+        // return clientes.stream().map(this::clienteToResponse).collect(Collectors.toList());
     }
 
     public Page<ClienteResponse> findAll(Pageable pageable) {
+        // busca os clientes de acordo com a configuração do pageable,
+        // converte para response e retorna como um Page<ClienteResponse>
         return clienteRepository.findAll(pageable)
                 .map(cliente -> clienteToResponse(cliente, true));
+        //return clienteRepository.findAll(pageable).map(this::clienteToResponse);
     }
 }

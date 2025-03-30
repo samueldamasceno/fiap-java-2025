@@ -32,6 +32,9 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+    // Create, Read, Update, Delete - CRUD
+    // Post, Get, Put, Delete - Verbos HTTP correspondentes
+
     @Operation(summary = "Cria um novo cliente")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Cliente cadastrado com sucesso",
@@ -53,6 +56,8 @@ public class ClienteController {
         return new ResponseEntity<>(clienteService.findAll(pageable), HttpStatus.OK);
     }
 
+    // PathVariable = parâmetro diretamente na URL, ex: /clientes/1
+    // RequestParam = parâmetro como query, ex: /clientes/?id=1
     @Operation(summary = "Retorna um cliente por ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Cliente encontrado com sucesso",
